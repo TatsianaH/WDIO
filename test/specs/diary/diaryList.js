@@ -22,5 +22,11 @@ describe('Diary List', ()=>{
     const expected = 'Day reports';
     expect(actualH1Text).to.equal(expected);
     });
+    it('should have a few records', () => {
+        const selector = '//div[@class="pb-4 mb-4 border-bottom"]';
+        const element = $(selector);
+        console.log(element);
+        
+    });
  
 });
