@@ -1,6 +1,6 @@
 exports.config = {
     debug: true,
-    execArgv: ['--inspect-brk=127.0.0.1:9229'],
+   
     
     //
     // ====================

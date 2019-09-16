@@ -6,19 +6,15 @@
 	"configurations": [
 
 		{
+			"name": "single test",
+			"env": {},
 			"type": "node",
 			"request": "launch",
-			"protocol": "inspector",
-			"port": 9229,
-			"name": "WebdriverIO",
-			"runtimeExecutable": "${workspaceRoot}/node_modules/.bin/wdio",
-			"windows": {
-				"runtimeExecutable": "${workspaceRoot}/node_modules/.bin/wdio.cmd"
-			},
-			"timeout": 1000000,
-			"cwd": "${workspaceRoot}",
-			"console": "integratedTerminal",
-			"args": ["", /*"wdio.conf.js,"*/ "--spec", "./test/specs/*"]
+			"args": ["wdio.conf.js", "--spec", "${file}"],
+			"cwd": "${workspaceFolder}",
+			"autoAttachChildProcesses": true,
+			"program": "${workspaceRoot}/node_modules/.bin/wdio",
+			"console": "integratedTerminal"
 		}
 	]
 }

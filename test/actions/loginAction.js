@@ -1,4 +1,4 @@
-function loginAction (browser){
+module.exports = () => {
     browser.url('https://stage.pasv.us/user/login');
     const emailField = $('//input[@name="email"]');
     const passwordField = $('//input[@name="password"]');
@@ -11,4 +11,4 @@ function loginAction (browser){
     loginButton.click();
     browser.pause(1000);
 }
-module.exports = loginAction;
+ 

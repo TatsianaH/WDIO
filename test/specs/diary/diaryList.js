@@ -9,7 +9,6 @@ describe('Diary List', ()=>{
     });
 
     it('should have main menu item', ()=> {
-   
     const isDisplayed = $(selectorMenuItem).isDisplayed();
     expect(isDisplayed).to.be.true;
 
