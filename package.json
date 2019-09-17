@@ -9,7 +9,9 @@
     "test:mainPage2": "wdio wdio.conf.js --spec ./test/specs/mainPage2.js --inspect",
     "test:login": "wdio wdio.conf.js --spec ./test/specs/login.js --inspect",
     "test:diary": "wdio wdio.conf.js --spec ./test/specs/diary/diaryList.js --inspect",
-    "test:loginAction": "wdio wdio.conf.js --spec ./test/actions/loginAction.js --inspect"
+    "test:loginAction": "wdio wdio.conf.js --spec ./test/actions/loginAction.js --inspect",
+    "test:reg": "wdio wdio.conf.js --spec ./test/specs/registration.js --inspect",
+    "test:ted": "wdio wdio.conf.js --spec ./test/specs/ted.js --inspect"
   },
   "keywords": [],
   "author": "Tatsiana Hantsevich",
