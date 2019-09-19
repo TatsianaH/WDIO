@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 const { baseUrl } = require('../../../../constants');
 const inputFieldPhone = '//input[@name="phone"]';
 
-/*describe('Cell Phone Number input field', () => {
+describe('Cell Phone Number input field', () => {
     before(() => {
         browser.url(baseUrl);
         const registerButton = '//a[@class="btn btn-outline-primary"]';
@@ -75,6 +75,7 @@ const inputFieldPhone = '//input[@name="phone"]';
 
 
 });
+/*
 //Validation: properties change all the time.
 describe('Cell Phone Number input field when the number is validated', () => {
     before(() => {
