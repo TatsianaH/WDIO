@@ -48,10 +48,8 @@ describe('Cell Phone Number input field', () => {
     });
 
     it('should verify text-align of "Cell phone number" input field when user enters first symbol', () => {
-        const textAlignObj = $(inputFieldPhone).getCSSProperty('text-align');
-        const valuesActualTextAlign = Object.values(textAlignObj);
-        const actualTextAlign = valuesActualTextAlign[1];
-        console.log('!!!!!!!!' + valuesActualTextAlign[1]);
+        const actualTextAlign = $(inputFieldPhone).getCSSProperty('text-align').value;
+        console.log('!!!!!!!!' + actualTextAlign);
         const expectedTextAlign = 'start';
         expect(actualTextAlign).to.be.equal(expectedTextAlign);
     });
