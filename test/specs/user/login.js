@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const loginAction = require('../actions/loginAction.js');
+const loginAction = require('../../actions/loginAction.js');
 
 describe('Login page', ()=>{
     before(()=> {

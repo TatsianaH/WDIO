@@ -7,11 +7,15 @@
     "test": "wdio wdio.conf.js --inspect",
     "test:mainPage": "wdio wdio.conf.js --spec ./test/specs/mainPage.js --inspect",
     "test:mainPage2": "wdio wdio.conf.js --spec ./test/specs/mainPage2.js --inspect",
-    "test:login": "wdio wdio.conf.js --spec ./test/specs/login.js --inspect",
+    "test:login": "wdio wdio.conf.js --spec ./test/specs/user/login.js --inspect",
     "test:diary": "wdio wdio.conf.js --spec ./test/specs/diary/diaryList.js --inspect",
     "test:loginAction": "wdio wdio.conf.js --spec ./test/actions/loginAction.js --inspect",
     "test:reg": "wdio wdio.conf.js --spec ./test/specs/registration.js --inspect",
-    "test:ted": "wdio wdio.conf.js --spec ./test/specs/ted.js --inspect"
+    "test:ted": "wdio wdio.conf.js --spec ./test/specs/ted.js --inspect",
+    "test:good": "wdio wdio.conf.js --spec ./test/specs/goodrx.js --inspect",
+    "test:c": "wdio wdio.conf.js --spec ./test/specs/goodrxCopy.js --inspect",
+    "test:lfd": "wdio wdio.conf.js --spec ./test/specs/user/loginForm/design/user_loginForm_design.js --inspect",
+    "test:rfd": "wdio wdio.conf.js --spec ./test/specs/user/registerForm/design/user_registerForm_design.js --inspect"
   },
   "keywords": [],
   "author": "Tatsiana Hantsevich",
