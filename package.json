@@ -15,7 +15,7 @@
     "test:good": "wdio wdio.conf.js --spec ./test/specs/goodrx.js --inspect",
     "test:c": "wdio wdio.conf.js --spec ./test/specs/goodrxCopy.js --inspect",
     "test:lfd": "wdio wdio.conf.js --spec ./test/specs/user/loginForm/design/user_loginForm_design.js --inspect",
-    "test:rfd": "wdio wdio.conf.js --spec ./test/specs/user/registerForm/design/user_registerForm_design.js --inspect"
+    "test:rfd": "wdio wdio.conf.js --spec ./test/specs/user/registerForm/design/user_registerForm_cellPhoneField_design.js --inspect"
   },
   "keywords": [],
   "author": "Tatsiana Hantsevich",

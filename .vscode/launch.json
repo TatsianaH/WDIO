@@ -15,6 +15,7 @@
 			"autoAttachChildProcesses": true,
 			"program": "${workspaceRoot}/node_modules/.bin/wdio",
 			"console": "integratedTerminal"
+		
 		}
 	]
 }
