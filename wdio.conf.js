@@ -1,7 +1,6 @@
 exports.config = {
-    debug: true,
    
-    
+    debug: true,
     //
     // ====================
     // Runner Configuration
@@ -22,8 +21,6 @@ exports.config = {
     specs: [
         './test/specs/**/*.js'
     ],
-    
-
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -61,13 +58,7 @@ exports.config = {
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
-    }//,
-    //{
-        //maxInstances: 5,
-        //
-        //browserName: 'firefox',
-    //}
-    ],
+    }],
     //
     // ===================
     // Test Configurations
@@ -132,21 +123,15 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
     reporters: ['spec',['allure', {outputDir: 'allure-results'}]],
-    reporterOptions: {
-        allure: {
-            outputDir: 'allure-results'
-        }
-    },
  
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000,
-        compilers: ['js:@babel/register']
+        timeout: 60000
     },
-     //
+    //
     // =====
     // Hooks
     // =====

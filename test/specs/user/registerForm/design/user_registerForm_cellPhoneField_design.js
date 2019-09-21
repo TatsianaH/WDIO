@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 const { baseUrl } = require('../../../../constants');
 const inputFieldPhone = '//input[@name="phone"]';
 
-describe('Cell Phone Number input field', () => {
+/*describe('Cell Phone Number input field', () => {
     before(() => {
         browser.url(baseUrl);
         const registerButton = '//a[@class="btn btn-outline-primary"]';
@@ -72,8 +72,9 @@ describe('Cell Phone Number input field', () => {
 
 
 
-});
-/*
+});*/
+
+
 //Validation: properties change all the time.
 describe('Cell Phone Number input field when the number is validated', () => {
     before(() => {
@@ -81,27 +82,20 @@ describe('Cell Phone Number input field when the number is validated', () => {
         const registerButton = '//a[@class="btn btn-outline-primary"]';
         $(registerButton).click();
         const input = $(inputFieldPhone).setValue('+17008009000');
+       // browser.keys('Enter');
         const inputFieldEmail = '//input[@name="email"]';
-        $(inputFieldEmail).click();
+       $(inputFieldEmail).click();
     });
    it('should verify border-color of "Cell phone number" input field when the number is validated.', () => {
 
         const actualBorderColorValid = $(inputFieldPhone).getCSSProperty('border-color').parsed.hex;
         console.log('!!!!!!!!' + actualBorderColorValid);
-        const expectedBorderColorValid = '#24c88b';
+        const expectedBorderColorValid = '##2dbca6';
         expect(actualBorderColorValid).to.be.equal(expectedBorderColorValid);
     });
-
-    it('should verify focus highlight color of "Cell phone number" input field when the number is validated', () => {
-        const actualFocusHighlightColorValid = $(inputFieldPhone).getCSSProperty('box-shadow').parsed.hex;
-        console.log('!!!!!!!!' + actualFocusHighlightColorValid);
-        const expectedFocusHighlightColorValid = '#24c88b';
-        expect(actualFocusHighlightColorValid).to.be.equal(expectedFocusHighlightColorValid);
-    });
-
 });
 
-describe('Cell phone number Label', () => {
+/*describe('Cell phone number Label', () => {
     before(() => {
         browser.url(baseUrl);
         const registerButton = '//a[@class="btn btn-outline-primary"]';
@@ -147,7 +141,7 @@ describe('Cell phone number Label', () => {
         expect(actualLabelAlign).to.be.equal(expectLabelAlign);
     });
 
-});*/
+});
 
 describe('Cell phone number description text', () => {
     before(() => {
@@ -202,4 +196,4 @@ describe('Cell phone number description text', () => {
     });
 
     
-});
+});*/

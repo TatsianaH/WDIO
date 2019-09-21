@@ -1,14 +1,15 @@
+const {url, user} = require('../constants')
 module.exports = () => {
-    browser.url('https://stage.pasv.us/user/login');
+    browser.url(url.loginUrl);
     const emailField = $('//input[@name="email"]');
     const passwordField = $('//input[@name="password"]');
     const loginButton = $('//button[@class="btn btn-primary disabled"]');
-    const EMAIL = 'test2@test.test';
-    const PASSWORD = '123';
+    const EMAIL = user.admin.email;
+    const PASSWORD = user.admin.password;
     emailField.setValue(EMAIL);
     passwordField.setValue(PASSWORD);
 
     loginButton.click();
-    browser.pause(1000);
+    browser.pause(2000);
 }
  
