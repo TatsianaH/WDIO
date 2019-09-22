@@ -37,5 +37,10 @@ describe('', () =>{
     });
 
     // the next test are not checked
-    it('should check that the day report was created on Day reports page')
+    it('should check that the day report was created on Day reports page', () => {
+        const actualReport = $('//div//div[@class="container"]//span/a[text()="Admin Test"]/../following-sibling::div[2]').getText();
+        
+        const expectedReport = 'Watched lessons, solved tasks, wrote tests.';
+        expect(actualReport).to.be.equal(expectedReport);
+    });
 });
