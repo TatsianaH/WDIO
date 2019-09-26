@@ -39,7 +39,7 @@ describe('Registration', () => {
     });
 
     it('should press susmit bitton', () => {
-        const submitButton = $('//div//button[contains(text(), "Submit")]');
+        const submitButton = $('//button[@type="Submit"]');
         submitButton.click();
         browser.pause(1000);
     });

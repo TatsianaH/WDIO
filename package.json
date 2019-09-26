@@ -9,13 +9,13 @@
     "test:mainPage2": "wdio wdio.conf.js --spec ./test/specs/mainPage2.js --inspect",
     "test:login": "wdio wdio.conf.js --spec ./test/specs/user/login.js --inspect",
     "test:diary": "wdio wdio.conf.js --spec ./test/specs/diary/diaryList.js --inspect",
-    "test:loginAction": "wdio wdio.conf.js --spec ./test/actions/loginAction.js --inspect",
+    "test:loginAction": "wdio wdio.conf.js --spec ./test/specs/user/actions/loginAction.js --inspect",
     "test:reg": "wdio wdio.conf.js --spec ./test/specs/user/registerForm/func/registration.js --inspect",
     "test:ted": "wdio wdio.conf.js --spec ./test/specs/ted.js --inspect",
     "test:good": "wdio wdio.conf.js --spec ./test/specs/goodrx.js --inspect",
     "test:c": "wdio wdio.conf.js --spec ./test/specs/goodrxCopy.js --inspect",
     "test:lfd": "wdio wdio.conf.js --spec ./test/specs/user/loginForm/design/user_loginForm_design.js --inspect",
-    "test:rfd": "wdio wdio.conf.js --spec ./test/specs/user/registerForm/design/user_registerForm_cellPhoneField_design.js --inspect",
+    "test:cfd": "wdio wdio.conf.js --spec ./test/specs/user/registerForm/design/user_registerForm_cellPhoneField_design.js --inspect",
     "test:lff": "wdio wdio.conf.js --spec ./test/specs/user/loginForm/func/user_loginForm_func.js --inspect",
     "test:rff": "wdio wdio.conf.js --spec ./test/specs/user/registerForm/func/user_registerForm_func.js --inspect",
     "test:d": "wdio wdio.conf.js --spec ./test/specs/user/diaryForm/func/user_diaryForm_func.js --inspect",
@@ -34,14 +34,16 @@
     "@wdio/spec-reporter": "^5.12.1",
     "@wdio/sync": "^5.13.0",
     "chai": "^4.2.0",
-    "chromedriver": "^77.0.0"
+    "chromedriver": "^77.0.0",
+    "eslint": "^6.4.0"
   },
   "dependencies": {
-    "@babel/cli": "^7.6.0",
-    "@babel/core": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
-    "@babel/register": "^7.6.0",
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/register": "^7.6.2",
     "axios": "^0.19.0",
+    "mocha": "^6.2.0",
     "webdriverio": "^5.13.1"
   }
 }

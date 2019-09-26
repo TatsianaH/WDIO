@@ -1,10 +1,12 @@
 const expect = require('chai').expect;
-const { baseUrl, url } = require('../../../../../test/constants');
-
+import { url } from '../../../../constants';
+//const registerAction = require('../../../../actions/registerAction')
+//const axios = require('axios');
+import userDeleteByEmail from '../../actions/deleteByEmail';
 
 describe('User - Register Form - Func - Form is displayed', () => {
     before(() => {
-        browser.url(baseUrl);
+        browser.url(url.baseUrl);
 
     });
 
@@ -37,8 +39,13 @@ describe('User - Register Form - Func - Form is displayed', () => {
 
 describe('User - Register Form - Func - Register new user', () => {
     before(() => {
-        browser.url(url.registerUrl);
+        userDeleteByEmail(user.student.email);
+       
+    });
 
+    it('shoud validate Submit button is disabled', () =>{
+        const submitButton = $('//button[@type="submit"]');
+        expect(submitButton.isEnabled()).to.be.false;
     });
     it('should have Real name field', () => {
         const actualRealname = $('//input[@name="name"]');
@@ -76,4 +83,16 @@ describe('User - Register Form - Func - Register new user', () => {
         expect(options).to.deep.equal(expectedList);
     });
 
+});
+
+describe('', () => {
+
+    before(() => {
+        registerAction(browser);
+    });
+
+   /* it('shoud validate Submit button is enabled', () =>{
+        const submitButton = $('//button[@type="submit"]');
+        expect(submitButton.isEnabled()).to.be.true;
+    });*/
 });

@@ -11,12 +11,12 @@ module.exports = () => {
     const goals = $('//textarea[@name="goals"]');
     const englishLevel = '//label[@for="englishLevel"]/../../select';
     
-    name.setValue(user.admin.name);
-    phone.setValue(user.admin.phone);
-    email.setValue(user.emailForRegister);
-    password.setValue(user.admin.password);
-    about.setValue(user.admin.about);
-    myGoals.setValue(user.admin.goals);
+    name.setValue(user.student.name);
+    phone.setValue(user.student.phone);
+    email.setValue(user.student.email);
+    password.setValue(user.student.password);
+    about.setValue(user.student.about);
+    myGoals.setValue(user.student.goals);
 
     $(englishLevel).click();
     const values = $(englishLevel).getText().split('\n');
@@ -28,7 +28,7 @@ module.exports = () => {
     option = $(englishLevel).selectByIndex(index);
     browser.keys('Tab');
 
-    const submitButton = $('//div//button[contains(text(), "Submit")]');
+    const submitButton = $('//button[@type="submit"]');
     submitButton.click();
     browser.pause(1000);
 }

@@ -1,24 +1,23 @@
-const expect = require('chai').expect;
-const { baseUrl } = require('../../../../constants');
+import { assert } from 'chai';
+import { url } from '../../../../constants';
+
 const inputFieldPhone = '//input[@name="phone"]';
 
-/*describe('Cell Phone Number input field', () => {
+describe('Cell Phone Number input field', () => {
     before(() => {
-        browser.url(baseUrl);
-        const registerButton = '//a[@class="btn btn-outline-primary"]';
-        $(registerButton).click();
+        browser.url(url.registerUrl);
     });
 
-    it('should verify that “Cell phone number” input field is displayed', () => {
+    it('should check that “Cell phone number” input field is displayed', () => {
         const actualInputFieldPhone = $(inputFieldPhone).isDisplayed();
-        expect(actualInputFieldPhone).to.be.true;
+        assert.isTrue(actualInputFieldPhone);
     });
 
     it('should verify border-color of "Cell phone number" input field ', () => {
         const actualBorder = $(inputFieldPhone).getCSSProperty('border-top-color').parsed.hex;
         console.log('!!!!!!!!' + actualBorder);
         const expectedBorder = '#ced4da';
-        expect(actualBorder).to.be.equal(expectedBorder);
+        assert.equal(actualBorder, expectedBorder);
     });
 
     it('should verify font-color of "Cell phone number" input field when user enters first symbol', () => {
@@ -26,32 +25,32 @@ const inputFieldPhone = '//input[@name="phone"]';
         const actualFontColor = $(inputFieldPhone).getCSSProperty('color').parsed.hex;
         console.log('!!!!!!!!' + actualFontColor);
         const expectedFontColor = '#495057';
-        expect(actualFontColor).to.be.equal(expectedFontColor);
+        assert.equal(actualFontColor, expectedFontColor);
     });
     it('should verify focus border-color of "Cell phone number" input field', () => {
         const actualFocusBorderColor = $(inputFieldPhone).getCSSProperty('border-color').parsed.hex;
         console.log('!!!!!!!!' + actualFocusBorderColor);
         const expectedFocusBorderColor = '#4d94ff';
-        expect(actualFocusBorderColor).to.be.equal(expectedFocusBorderColor);
+        assert.equal(actualFocusBorderColor, expectedFocusBorderColor);
     });
     it('should verify focus highlight color of "Cell phone number', () => {
         const actualFocusHighlightColor = $(inputFieldPhone).getCSSProperty('box-shadow').parsed.hex;
         console.log('!!!!!!!!' + actualFocusHighlightColor);
         const expectedFocusHighlightColor = '#0052cc';
-        expect(actualFocusHighlightColor).to.be.equal(expectedFocusHighlightColor);
+        assert.equal(actualFocusHighlightColor, expectedFocusHighlightColor);
     });
     it('should verify background-color of "Cell phone number" input field when user enters first symbol', () => {
         const actualBackgroundColor = $(inputFieldPhone).getCSSProperty('background-color').parsed.hex;
         console.log('!!!!!!!!' + actualBackgroundColor);
         const expectedBackgroundColor = '#ffffff';
-        expect(actualBackgroundColor).to.be.equal(expectedBackgroundColor);
+        assert.equal(actualBackgroundColor, expectedBackgroundColor);
     });
 
     it('should verify text-align of "Cell phone number" input field when user enters first symbol', () => {
         const actualTextAlign = $(inputFieldPhone).getCSSProperty('text-align').value;
         console.log('!!!!!!!!' + actualTextAlign);
         const expectedTextAlign = 'start';
-        expect(actualTextAlign).to.be.equal(expectedTextAlign);
+        assert.equal(actualTextAlign, expectedTextAlign);
     });
 
     it('should verify font-family of "Cell phone number" input field when user enters first symbol.', () => {
@@ -60,51 +59,47 @@ const inputFieldPhone = '//input[@name="phone"]';
         const actualfontFamily = Object.values(valuesfontFamilyObj).join();
         console.log('!!!!!!!!' + actualfontFamily);
         const expectedfontFamily = 'sf pro display,sf pro icons,helvetica neue,helvetica,arial,sans-serif,font,"sf pro display", "sf pro icons", "helvetica neue", helvetica, arial, sans-serif';
-        expect(actualfontFamily).to.be.equal(expectedfontFamily);
+        assert.equal(actualfontFamily, expectedfontFamily);
     });
     it('should verify font-weight of "Cell phone number" input field when user enters first symbol.', () => {
         const actualWeightObj = $(inputFieldPhone).getCSSProperty('font-weight');
         const actualWeight = Object.values(actualWeightObj)[1];
         console.log('!!!!!!!!' + actualWeight);
         const expectedweight = 400;
-        expect(actualWeight).to.be.equal(expectedweight);
+        assert.equal(actualWeight, expectedweight);
     });
 
 
 
-});*/
+});
 
-
-//Validation: properties change all the time.
 describe('Cell Phone Number input field when the number is validated', () => {
+
     before(() => {
-        browser.url(baseUrl);
-        const registerButton = '//a[@class="btn btn-outline-primary"]';
-        $(registerButton).click();
+        browser.url(url.registerUrl);
+
         const input = $(inputFieldPhone).setValue('+17008009000');
-       // browser.keys('Enter');
-        const inputFieldEmail = '//input[@name="email"]';
-       $(inputFieldEmail).click();
+        browser.keys('Tab');
+        browser.pause(500);
+
     });
-   it('should verify border-color of "Cell phone number" input field when the number is validated.', () => {
+    it('should verify border-color of "Cell phone number" input field when the number is validated.', () => {
 
         const actualBorderColorValid = $(inputFieldPhone).getCSSProperty('border-color').parsed.hex;
         console.log('!!!!!!!!' + actualBorderColorValid);
-        const expectedBorderColorValid = '##2dbca6';
-        expect(actualBorderColorValid).to.be.equal(expectedBorderColorValid);
+        const expectedBorderColorValid = '#24c88b';
+        assert.equal(actualBorderColorValid, expectedBorderColorValid);
     });
-});
 
-/*describe('Cell phone number Label', () => {
+});
+describe('Cell phone number Label', () => {
     before(() => {
-        browser.url(baseUrl);
-        const registerButton = '//a[@class="btn btn-outline-primary"]';
-        $(registerButton).click();
+        browser.url(url.registerUrl);
     });
 
     it('should verify that label “Cell phone number”  is displayed.', () => {
         const actualLabel = $('//label[@for="phone"]').isDisplayed();
-        expect(actualLabel).to.be.true;
+        assert.isTrue(actualLabel);
     });
     it('should verify label "Cell phone number" font-family.', () => {
         const actualLabelObj = $('//label[@for="phone"]').getCSSProperty('font-family');
@@ -112,88 +107,86 @@ describe('Cell Phone Number input field when the number is validated', () => {
         const actualLabelfontFamily = Object.values(valuesfontFamilyObj).join();
         console.log('!!!!!!!!' + actualLabelfontFamily);
         const expectedLabelfontFamily = 'sf pro display,sf pro icons,helvetica neue,helvetica,arial,sans-serif,font,"sf pro display", "sf pro icons", "helvetica neue", helvetica, arial, sans-serif';
-        expect(actualLabelfontFamily).to.be.equal(expectedLabelfontFamily);
+        assert.equal(actualLabelfontFamily, expectedLabelfontFamily);
     });
     it('should verify label "Cell phone number" font-size', () => {
         const labelSizeObj = $('//label[@for="phone"]').getCSSProperty('font-size').value;
         console.log('!!!!!!!!!' + labelSizeObj);
         const expectedLabelSize = '17px';
-        expect(labelSizeObj).to.be.equal(expectedLabelSize);
+        assert.equal(labelSizeObj, expectedLabelSize);
     });
 
     it('should verify label "Cell phone number" font-color', () => {
         const actualLabelColor = $('//label[@for="phone"]').getCSSProperty('color').parsed.hex;
         console.log(actualLabelColor);
         const expectLabelColor = '#212529';
-        expect(actualLabelColor).to.be.equal(expectLabelColor);
+        assert.equal(actualLabelColor, expectLabelColor);
     });
     it('should verify label "Cell phone number" font-weight', () => {
         const actualLabelWeight = $('//label[@for="phone"]').getCSSProperty('font-weight').value;
-        console.log('!!!!!!'+actualLabelWeight);
+        console.log('!!!!!!' + actualLabelWeight);
         const expectLabelWeight = 400;
-        expect(actualLabelWeight).to.be.equal(expectLabelWeight);
+        assert.equal(actualLabelWeight, expectLabelWeight);
     });
 
     it('should verify label "Cell phone number" text-align', () => {
         const actualLabelAlign = $('//label[@for="phone"]').getCSSProperty('text-align').value;
-        console.log('!!!!!!'+ actualLabelAlign);
+        console.log('!!!!!!' + actualLabelAlign);
         const expectLabelAlign = 'left';
-        expect(actualLabelAlign).to.be.equal(expectLabelAlign);
+        assert.equal(actualLabelAlign, expectLabelAlign);
     });
 
 });
 
 describe('Cell phone number description text', () => {
     before(() => {
-        browser.url(baseUrl);
-        const registerButton = '//a[@class="btn btn-outline-primary"]';
-        $(registerButton).click();
+        browser.url(url.registerUrl);
     });
 
     it('should verify that label “Cell phone number”  is displayed.', () => {
         const actualDescText = $('//input[@name="phone"]/following-sibling::small').isDisplayed();
-        expect(actualDescText).to.be.true;
+        assert.isTrue(actualDescText);
     });
 
     it('should verify that description text is “Format +17770005511 or +380653332244”', () => {
         const actualDescText = $('//input[@name="phone"]/following-sibling::small').getText();
         console.log('!!!!!!!!' + actualDescText);
         const expectedDescText = 'Format +17770005511 or +380653332244';
-        expect(actualDescText).to.be.equal(expectedDescText);
+        assert.equal(actualDescText, expectedDescText);
     });
 
     it('should verify description text font-family', () => {
         const actualDescTextFontFamily = $('//input[@name="phone"]/following-sibling::small').getCSSProperty('font-family').parsed.value.join();
         console.log('!!!!!!!!' + actualDescTextFontFamily);
         const expectedDescTextFontFamily = 'sf pro display,sf pro icons,helvetica neue,helvetica,arial,sans-serif';
-        expect(actualDescTextFontFamily).to.be.equal(expectedDescTextFontFamily);
+        assert.equal(actualDescTextFontFamily, expectedDescTextFontFamily);
     });
 
     it('should verify description text font-size', () => {
         const actualDescTextSize = $('//input[@name="phone"]/following-sibling::small').getCSSProperty('font-size').value;
         console.log('!!!!!!!!' + actualDescTextSize);
         const expectedDescTextSize = '13.6px';
-        expect(actualDescTextSize).to.be.equal(expectedDescTextSize);
+        assert.equal(actualDescTextSize, expectedDescTextSize);
     });
 
     it('should verify description text font-color', () => {
         const actualDescTextColor = $('//input[@name="phone"]/following-sibling::small').getCSSProperty('color').parsed.hex;
         console.log('!!!!!!!!' + actualDescTextColor);
         const expectedDescTextColor = '#6c757d';
-        expect(actualDescTextColor).to.be.equal(expectedDescTextColor);
+        assert.equal(actualDescTextColor, expectedDescTextColor);
     });
     it('should verify description text font-weight', () => {
         const actualDescTextWeight = $('//input[@name="phone"]/following-sibling::small').getCSSProperty('font-weight').value;
         console.log('!!!!!!!!' + actualDescTextWeight);
         const expectedDescTextWeight = 400;
-        expect(actualDescTextWeight).to.be.equal(expectedDescTextWeight);
+        assert.equal(actualDescTextWeight, expectedDescTextWeight);
     });
     it('should verify description text text-align', () => {
         const actualDescTextAlign = $('//input[@name="phone"]/following-sibling::small').getCSSProperty('text-align').value;
         console.log('!!!!!!!!' + actualDescTextAlign);
         const expectedDescTextAlign = 'left';
-        expect(actualDescTextAlign).to.be.equal(expectedDescTextAlign);
+        assert.equal(actualDescTextAlign, expectedDescTextAlign);
     });
 
-    
+
 });*/
