@@ -19,7 +19,8 @@
     "test:lff": "wdio wdio.conf.js --spec ./test/specs/user/loginForm/func/user_loginForm_func.js --inspect",
     "test:rff": "wdio wdio.conf.js --spec ./test/specs/user/registerForm/func/user_registerForm_func.js --inspect",
     "test:d": "wdio wdio.conf.js --spec ./test/specs/user/diaryForm/func/user_diaryForm_func.js --inspect",
-    "test:i": "wdio wdio.conf.js --spec ./test/specs/user/registerForm/integration/user_register-login_integr.js --inspect"
+    "test:i": "wdio wdio.conf.js --spec ./test/specs/user/registerForm/integration/user_register-login_integr.js --inspect",
+    "test:lpf": "wdio wdio.conf.js --spec ./test/specs/user/loginForm/func/user_loginForm_password_func.js --inspect"
   },
   "keywords": [],
   "author": "Tatsiana Hantsevich",
