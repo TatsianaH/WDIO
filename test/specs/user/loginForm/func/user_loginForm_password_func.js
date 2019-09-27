@@ -36,6 +36,7 @@ describe('User - LoginForm - Password - Func', () => {
         const expectEmptyTextOfPassword = '';
         assert.equal(actualTextOfPassword, expectEmptyTextOfPassword);
     });*/
+    
     it ('should validate that Login button is enabled if password is correct', () => {
         $(passwordField).setValue(user.admin.password);
         assert.isTrue($(loginButton).isEnabled());
@@ -56,5 +57,12 @@ describe('User - LoginForm - Password - Func', () => {
         const expectedAccountUrl = 'https://stage.pasv.us/user/5d4f289fb3e314003833d446';
         const actualUrl = browser.getUrl(); 
         assert.equal(actualUrl, expectedAccountUrl);
+    });
+    it('should validate that user can succesfully log in with correct password (Logout link appears)', () => {
+        const UserNameLink = '//div[@id="user-section"]//a[text()="Admin Test"]';
+        $(UserNameLink).click();
+        const actualLogoutButton = $('//button[contains(text(),"Logout")]').getText();
+        const expectedLogoutButton = 'Logout';
+        assert.equal(actualLogoutButton, expectedLogoutButton);
     });
 });
