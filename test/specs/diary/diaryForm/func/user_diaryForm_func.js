@@ -1,20 +1,30 @@
-const expect = require('chai').expect;
-const loginAction = require('../../../../actions/loginAction');
-const { url, user } = require('../../../../constants');
+import { expect } from 'chai';
+import loginAction from '../../../user/actions/loginAction';
+import { url } from '../../../../constants';
 
 const textDayReport = 'Watched lessons, solved tasks, wrote tests.';
 let markLabelText = '';
 const actualReport = '//div//div[@class="container"]//span/a[text()="Admin Test"]/../following-sibling::div[2]';
+//const diaryUrl = 'https://stage.pasv.us/diary/create';
+//const urlDiaryReport = 'https://stage.pasv.us/diary';
 
 describe('', () => {
     before(() => {
         loginAction(browser);
     });
-    
+    it('shoul wait server response', () => {
+        browser.waitUntil(() => {
+            return $('//h1').getText() === 'Admin Test'
+        }, 2000);
+    });
+
     it('should redirect to Diary page', () => {
         const diaryLink = '//div[@id="site-menu"]/ul/li/a[contains(text(),"Diary")]';
         $(diaryLink).click();
-        browser.pause(1000);
+        browser.waitUntil(() => {
+            return $('//h1').getText() === 'Day reports'
+        }, 2000);
+
         const actualUrl = browser.getUrl();
         expect(actualUrl).to.be.equal(url.diaryUrl);
     });
@@ -23,7 +33,7 @@ describe('', () => {
         const diaryReport = '//a[(text()="Create day report")]';
         $(diaryReport).click();
         const actualDiaryReportUrl = browser.getUrl();
-        expect(actualDiaryReportUrl).to.be.equal(url.diaryReportUrl)
+        expect(actualDiaryReportUrl).to.be.equal(url.diaryReportUrl);
 
     });
     it('should create a day report and mark the label', () => {
@@ -60,7 +70,7 @@ describe('', () => {
         const crossSign = $('//span[@class="notification-dismiss"]').click();
     });
 
-   it('should check that Like has succesfull message', () => {
+    it('should check that Like has succesfull message', () => {
         const buttonLike = $('//div//div[@class="container"]//span/a[text()="Admin Test"]/../following-sibling::span//button[@class="btn btn-outline-primary btn-sm"]').click();
         const actualMessage = $('//div[@class="notification notification-success notification-visible"]/h4').getText();
         console.log('!!!!!!!!!!!!!!', actualMessage)
@@ -82,12 +92,12 @@ describe('', () => {
         browser.refresh();
         browser.pause(1000);
     });
-it('should check that day report is not displayed', () => {
-    const reportDeleted = $(actualReport).isDisplayed();
-    console.log('!!!!!!!!!!!', reportDeleted);
-    expect(reportDeleted).to.be.false;
+    it('should check that day report is not displayed', () => {
+        const reportDeleted = $(actualReport).isDisplayed();
+        console.log('!!!!!!!!!!!', reportDeleted);
+        expect(reportDeleted).to.be.false;
+
+    });
 
 });
-});
-
 
