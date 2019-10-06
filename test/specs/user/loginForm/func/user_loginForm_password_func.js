@@ -20,7 +20,7 @@ describe('User - LoginForm - Password - Func', () => {
     $(emailField).setValue(user.admin.email);
   });
 
-  it('should check that validation failed if password field is empty', () =>{
+/*  it('should check that validation failed if password field is empty', () =>{
     browser.keys('Tab');
     browser.keys('Tab');
     const validation = $(passwordField).getAttribute('class').includes('is-invalid');
@@ -50,12 +50,11 @@ describe('User - LoginForm - Password - Func', () => {
     const validation = $(passwordField).getAttribute('class').includes('is-valid');
     console.log('!!!!!!!!!!!!!!!!', validation);
     expect(validation).to.be.true;
-  });
+  });*/
 
   it('should validate that symbols in password field replaced by bullets', () =>{
-    const bullets = $(passwordField).getCSSProperty('-webkit-text-security').value;
-    console.log('!!!!!!!!!!!!!!!!!!', bullets);
-    expect(bullets).to.be.equal('disc');
+    const bullets = $(passwordField).getAttribute('type');
+    expect(bullets).to.be.equal('password');
   });
 
   it('should check success message appears if user logged in with correct password', () =>{
@@ -67,10 +66,4 @@ describe('User - LoginForm - Password - Func', () => {
     expect(actualSuccessMsg).to.be.equal(expectedSuccessMsg);
     //browser.pause(1000);
   });
-
-  /*it('should validate that user can successfully log in with correct password (Logout link appears)', () => {
-    $(UserNameLink).click();
-    const actualLogoutButton = $(logoutButton).getText();
-    expect(actualLogoutButton).to.be.equal(expectedLogoutButton);
-  });*/
 });
